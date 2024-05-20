@@ -1,0 +1,15 @@
+/Users/jorgeromero/Documents/Desarrollo/CSharp/GYMMDB/gymAPI.Infraestructura/bin/Debug/net8.0/gymAPI.Infraestructura.deps.json
+/Users/jorgeromero/Documents/Desarrollo/CSharp/GYMMDB/gymAPI.Infraestructura/bin/Debug/net8.0/gymAPI.Infraestructura.dll
+/Users/jorgeromero/Documents/Desarrollo/CSharp/GYMMDB/gymAPI.Infraestructura/bin/Debug/net8.0/gymAPI.Infraestructura.pdb
+/Users/jorgeromero/Documents/Desarrollo/CSharp/GYMMDB/gymAPI.Infraestructura/bin/Debug/net8.0/gymAPI.Comunes.dll
+/Users/jorgeromero/Documents/Desarrollo/CSharp/GYMMDB/gymAPI.Infraestructura/bin/Debug/net8.0/gymAPI.Comunes.pdb
+/Users/jorgeromero/Documents/Desarrollo/CSharp/GYMMDB/gymAPI.Infraestructura/obj/Debug/net8.0/gymAPI.Infraestructura.csproj.AssemblyReference.cache
+/Users/jorgeromero/Documents/Desarrollo/CSharp/GYMMDB/gymAPI.Infraestructura/obj/Debug/net8.0/gymAPI.Infraestructura.GeneratedMSBuildEditorConfig.editorconfig
+/Users/jorgeromero/Documents/Desarrollo/CSharp/GYMMDB/gymAPI.Infraestructura/obj/Debug/net8.0/gymAPI.Infraestructura.AssemblyInfoInputs.cache
+/Users/jorgeromero/Documents/Desarrollo/CSharp/GYMMDB/gymAPI.Infraestructura/obj/Debug/net8.0/gymAPI.Infraestructura.AssemblyInfo.cs
+/Users/jorgeromero/Documents/Desarrollo/CSharp/GYMMDB/gymAPI.Infraestructura/obj/Debug/net8.0/gymAPI.Infraestructura.csproj.CoreCompileInputs.cache
+/Users/jorgeromero/Documents/Desarrollo/CSharp/GYMMDB/gymAPI.Infraestructura/obj/Debug/net8.0/gymAPI.I.4B645907.Up2Date
+/Users/jorgeromero/Documents/Desarrollo/CSharp/GYMMDB/gymAPI.Infraestructura/obj/Debug/net8.0/gymAPI.Infraestructura.dll
+/Users/jorgeromero/Documents/Desarrollo/CSharp/GYMMDB/gymAPI.Infraestructura/obj/Debug/net8.0/refint/gymAPI.Infraestructura.dll
+/Users/jorgeromero/Documents/Desarrollo/CSharp/GYMMDB/gymAPI.Infraestructura/obj/Debug/net8.0/gymAPI.Infraestructura.pdb
+/Users/jorgeromero/Documents/Desarrollo/CSharp/GYMMDB/gymAPI.Infraestructura/obj/Debug/net8.0/ref/gymAPI.Infraestructura.dll

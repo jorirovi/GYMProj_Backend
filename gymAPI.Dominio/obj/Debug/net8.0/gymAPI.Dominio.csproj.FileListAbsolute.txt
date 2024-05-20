@@ -1,0 +1,17 @@
+/Users/jorgeromero/Documents/Desarrollo/CSharp/GYMMDB/gymAPI.Dominio/bin/Debug/net8.0/gymAPI.Dominio.deps.json
+/Users/jorgeromero/Documents/Desarrollo/CSharp/GYMMDB/gymAPI.Dominio/bin/Debug/net8.0/gymAPI.Dominio.dll
+/Users/jorgeromero/Documents/Desarrollo/CSharp/GYMMDB/gymAPI.Dominio/bin/Debug/net8.0/gymAPI.Dominio.pdb
+/Users/jorgeromero/Documents/Desarrollo/CSharp/GYMMDB/gymAPI.Dominio/bin/Debug/net8.0/gymAPI.Comunes.dll
+/Users/jorgeromero/Documents/Desarrollo/CSharp/GYMMDB/gymAPI.Dominio/bin/Debug/net8.0/gymAPI.Infraestructura.dll
+/Users/jorgeromero/Documents/Desarrollo/CSharp/GYMMDB/gymAPI.Dominio/bin/Debug/net8.0/gymAPI.Comunes.pdb
+/Users/jorgeromero/Documents/Desarrollo/CSharp/GYMMDB/gymAPI.Dominio/bin/Debug/net8.0/gymAPI.Infraestructura.pdb
+/Users/jorgeromero/Documents/Desarrollo/CSharp/GYMMDB/gymAPI.Dominio/obj/Debug/net8.0/gymAPI.Dominio.csproj.AssemblyReference.cache
+/Users/jorgeromero/Documents/Desarrollo/CSharp/GYMMDB/gymAPI.Dominio/obj/Debug/net8.0/gymAPI.Dominio.GeneratedMSBuildEditorConfig.editorconfig
+/Users/jorgeromero/Documents/Desarrollo/CSharp/GYMMDB/gymAPI.Dominio/obj/Debug/net8.0/gymAPI.Dominio.AssemblyInfoInputs.cache
+/Users/jorgeromero/Documents/Desarrollo/CSharp/GYMMDB/gymAPI.Dominio/obj/Debug/net8.0/gymAPI.Dominio.AssemblyInfo.cs
+/Users/jorgeromero/Documents/Desarrollo/CSharp/GYMMDB/gymAPI.Dominio/obj/Debug/net8.0/gymAPI.Dominio.csproj.CoreCompileInputs.cache
+/Users/jorgeromero/Documents/Desarrollo/CSharp/GYMMDB/gymAPI.Dominio/obj/Debug/net8.0/gymAPI.D.A112CCA2.Up2Date
+/Users/jorgeromero/Documents/Desarrollo/CSharp/GYMMDB/gymAPI.Dominio/obj/Debug/net8.0/gymAPI.Dominio.dll
+/Users/jorgeromero/Documents/Desarrollo/CSharp/GYMMDB/gymAPI.Dominio/obj/Debug/net8.0/refint/gymAPI.Dominio.dll
+/Users/jorgeromero/Documents/Desarrollo/CSharp/GYMMDB/gymAPI.Dominio/obj/Debug/net8.0/gymAPI.Dominio.pdb
+/Users/jorgeromero/Documents/Desarrollo/CSharp/GYMMDB/gymAPI.Dominio/obj/Debug/net8.0/ref/gymAPI.Dominio.dll

@@ -1,0 +1,12 @@
+/Users/jorgeromero/Documents/Desarrollo/CSharp/GYMMDB/gymAPI.Comunes/bin/Debug/net8.0/gymAPI.Comunes.deps.json
+/Users/jorgeromero/Documents/Desarrollo/CSharp/GYMMDB/gymAPI.Comunes/bin/Debug/net8.0/gymAPI.Comunes.dll
+/Users/jorgeromero/Documents/Desarrollo/CSharp/GYMMDB/gymAPI.Comunes/bin/Debug/net8.0/gymAPI.Comunes.pdb
+/Users/jorgeromero/Documents/Desarrollo/CSharp/GYMMDB/gymAPI.Comunes/obj/Debug/net8.0/gymAPI.Comunes.GeneratedMSBuildEditorConfig.editorconfig
+/Users/jorgeromero/Documents/Desarrollo/CSharp/GYMMDB/gymAPI.Comunes/obj/Debug/net8.0/gymAPI.Comunes.AssemblyInfoInputs.cache
+/Users/jorgeromero/Documents/Desarrollo/CSharp/GYMMDB/gymAPI.Comunes/obj/Debug/net8.0/gymAPI.Comunes.AssemblyInfo.cs
+/Users/jorgeromero/Documents/Desarrollo/CSharp/GYMMDB/gymAPI.Comunes/obj/Debug/net8.0/gymAPI.Comunes.csproj.CoreCompileInputs.cache
+/Users/jorgeromero/Documents/Desarrollo/CSharp/GYMMDB/gymAPI.Comunes/obj/Debug/net8.0/gymAPI.Comunes.dll
+/Users/jorgeromero/Documents/Desarrollo/CSharp/GYMMDB/gymAPI.Comunes/obj/Debug/net8.0/refint/gymAPI.Comunes.dll
+/Users/jorgeromero/Documents/Desarrollo/CSharp/GYMMDB/gymAPI.Comunes/obj/Debug/net8.0/gymAPI.Comunes.pdb
+/Users/jorgeromero/Documents/Desarrollo/CSharp/GYMMDB/gymAPI.Comunes/obj/Debug/net8.0/ref/gymAPI.Comunes.dll
+/Users/jorgeromero/Documents/Desarrollo/CSharp/GYMMDB/gymAPI.Comunes/obj/Debug/net8.0/gymAPI.Comunes.csproj.AssemblyReference.cache
