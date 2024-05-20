@@ -1724,19 +1724,19 @@
     ]
   },
   "packageFolders": {
-    "/Users/jorgeromero/.nuget/packages/": {}
+    "C:\\Users\\Jorge\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "/Users/jorgeromero/Documents/Desarrollo/CSharp/GYMMDB/gymAPI.Infraestructura/gymAPI.Infraestructura.csproj",
+      "projectUniqueName": "C:\\Users\\Jorge\\Desarrollo\\CSharp\\GYMMdb\\gymAPI.Infraestructura\\gymAPI.Infraestructura.csproj",
       "projectName": "gymAPI.Infraestructura",
-      "projectPath": "/Users/jorgeromero/Documents/Desarrollo/CSharp/GYMMDB/gymAPI.Infraestructura/gymAPI.Infraestructura.csproj",
-      "packagesPath": "/Users/jorgeromero/.nuget/packages/",
-      "outputPath": "/Users/jorgeromero/Documents/Desarrollo/CSharp/GYMMDB/gymAPI.Infraestructura/obj/",
+      "projectPath": "C:\\Users\\Jorge\\Desarrollo\\CSharp\\GYMMdb\\gymAPI.Infraestructura\\gymAPI.Infraestructura.csproj",
+      "packagesPath": "C:\\Users\\Jorge\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\Jorge\\Desarrollo\\CSharp\\GYMMdb\\gymAPI.Infraestructura\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "/Users/jorgeromero/.nuget/NuGet/NuGet.Config"
+        "C:\\Users\\Jorge\\AppData\\Roaming\\NuGet\\NuGet.Config"
       ],
       "originalTargetFrameworks": [
         "net8.0"
@@ -1748,8 +1748,8 @@
         "net8.0": {
           "targetAlias": "net8.0",
           "projectReferences": {
-            "/Users/jorgeromero/Documents/Desarrollo/CSharp/GYMMDB/gymAPI.Comunes/gymAPI.Comunes.csproj": {
-              "projectPath": "/Users/jorgeromero/Documents/Desarrollo/CSharp/GYMMDB/gymAPI.Comunes/gymAPI.Comunes.csproj"
+            "C:\\Users\\Jorge\\Desarrollo\\CSharp\\GYMMdb\\gymAPI.Comunes\\gymAPI.Comunes.csproj": {
+              "projectPath": "C:\\Users\\Jorge\\Desarrollo\\CSharp\\GYMMdb\\gymAPI.Comunes\\gymAPI.Comunes.csproj"
             }
           }
         }
@@ -1794,7 +1794,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/8.0.204/PortableRuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.204/PortableRuntimeIdentifierGraph.json"
       }
     }
   }
