@@ -15,3 +15,4 @@
 /Users/jorgeromero/Documents/Desarrollo/CSharp/GYMMDB/gymAPI.Dominio/obj/Debug/net8.0/refint/gymAPI.Dominio.dll
 /Users/jorgeromero/Documents/Desarrollo/CSharp/GYMMDB/gymAPI.Dominio/obj/Debug/net8.0/gymAPI.Dominio.pdb
 /Users/jorgeromero/Documents/Desarrollo/CSharp/GYMMDB/gymAPI.Dominio/obj/Debug/net8.0/ref/gymAPI.Dominio.dll
+/Users/jorgeromero/Documents/Desarrollo/CSharp/GYMMDB/gymAPI.Dominio/obj/Debug/net8.0/gymAPI.Dominio.sourcelink.json

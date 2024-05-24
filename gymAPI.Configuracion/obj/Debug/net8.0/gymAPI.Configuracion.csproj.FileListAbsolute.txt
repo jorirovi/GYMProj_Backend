@@ -17,3 +17,4 @@
 /Users/jorgeromero/Documents/Desarrollo/CSharp/GYMMDB/gymAPI.Configuracion/obj/Debug/net8.0/refint/gymAPI.Configuracion.dll
 /Users/jorgeromero/Documents/Desarrollo/CSharp/GYMMDB/gymAPI.Configuracion/obj/Debug/net8.0/gymAPI.Configuracion.pdb
 /Users/jorgeromero/Documents/Desarrollo/CSharp/GYMMDB/gymAPI.Configuracion/obj/Debug/net8.0/ref/gymAPI.Configuracion.dll
+/Users/jorgeromero/Documents/Desarrollo/CSharp/GYMMDB/gymAPI.Configuracion/obj/Debug/net8.0/gymAPI.Configuracion.sourcelink.json

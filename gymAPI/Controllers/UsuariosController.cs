@@ -49,9 +49,9 @@ namespace gymAPI.Controllers
             return Ok(GymConstantes.registroElimnado);
         }
         [HttpPut("{email}/{newPass}")]
-        public async Task<IActionResult> ActualizaPass(string email, string ewPass)
+        public async Task<IActionResult> ActualizaPass(string email, string newPass)
         {
-            return Ok(await _usuarioServicio.UpdatePass(email, ewPass));
+            return Ok(await _usuarioServicio.UpdatePass(email, newPass));
         }
     }
 }
