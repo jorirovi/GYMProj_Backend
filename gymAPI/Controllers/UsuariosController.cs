@@ -1,6 +1,7 @@
 using gymAPI.Comunes.Classes.Constantes;
 using gymAPI.Comunes.Classes.Contracts;
 using gymAPI.Dominio.Service.GYM.General;
+using gymAPI.Dominio.Service.GYM.Usuarios;
 using Microsoft.AspNetCore.Mvc;
 
 namespace gymAPI.Controllers
@@ -10,9 +11,11 @@ namespace gymAPI.Controllers
     public class UsuariosController : ControllerBase
     {
         private readonly ICrudService<UsuariosContract> _servicio;
-        public UsuariosController(ICrudService<UsuariosContract> servicio)
+        private readonly IUsuariosService _usuarioServicio;
+        public UsuariosController(ICrudService<UsuariosContract> servicio, IUsuariosService usuarioServicio)
         {
             _servicio = servicio;
+            _usuarioServicio = usuarioServicio;
         }
 
         [HttpGet]
@@ -44,6 +47,11 @@ namespace gymAPI.Controllers
         {
             await _servicio.Remove(id);
             return Ok(GymConstantes.registroElimnado);
+        }
+        [HttpPut("{email}/{newPass}")]
+        public async Task<IActionResult> ActualizaPass(string email, string ewPass)
+        {
+            return Ok(await _usuarioServicio.UpdatePass(email, ewPass));
         }
     }
 }
