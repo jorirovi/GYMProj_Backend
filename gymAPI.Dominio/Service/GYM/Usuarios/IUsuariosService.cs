@@ -1,9 +1,10 @@
+using gymAPI.Comunes.Classes.Contracts;
 using gymAPI.Infraestructura.Repositorios.Usuarios;
 
 namespace gymAPI.Dominio.Service.GYM.Usuarios
 {
     public interface IUsuariosService
     {
-        Task<UsuarioRepository> UpdatePass(string email, string newPass);
+        Task<UsuariosContract> UpdatePass(string email, string newPass);
     }
 }

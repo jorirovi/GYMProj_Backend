@@ -93,7 +93,7 @@ namespace gymAPI.Dominio.Service.GYM.Usuarios
             }
         }
 
-        public async Task<UsuarioRepository> UpdatePass(string email, string newPass)
+        public async Task<UsuariosContract> UpdatePass(string email, string newPass)
         {
             UsuariosEntity usuario = await _uRepository.GetUsuarioByEmail(email);
             if (usuario != null){
@@ -106,7 +106,7 @@ namespace gymAPI.Dominio.Service.GYM.Usuarios
                     password = pass
                 };
                 await _repository.UpdateAsync(pmUsuario);
-                return _mapper.Map<UsuarioRepository>(pmUsuario);
+                return _mapper.Map<UsuariosContract>(pmUsuario);
             }
             else
             {
