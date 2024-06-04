@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("gymAPI")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+3821e7111d1c028cd43f7b6d0da938e0d9953819")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+85d5becf9fe6286279819d50000bdf097dbd83a0")]
 [assembly: System.Reflection.AssemblyProductAttribute("gymAPI")]
 [assembly: System.Reflection.AssemblyTitleAttribute("gymAPI")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
