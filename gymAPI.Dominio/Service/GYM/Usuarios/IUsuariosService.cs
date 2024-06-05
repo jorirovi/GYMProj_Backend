@@ -5,6 +5,6 @@ namespace gymAPI.Dominio.Service.GYM.Usuarios
 {
     public interface IUsuariosService
     {
-        Task<UsuariosContract> UpdatePass(string email, string newPass);
+        Task<UsuariosContract> UpdatePass(LoginContract entity);
     }
 }

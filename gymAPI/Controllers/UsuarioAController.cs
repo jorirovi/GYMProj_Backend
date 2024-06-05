@@ -18,5 +18,9 @@ namespace gymAPI.Controllers
         public async Task<IActionResult> obtenerUsuarios(){
             return Ok(await _servicio.GetAll());
         }
+        [HttpGet("{id}")]
+        public async Task<IActionResult> ObtenerUsuariosByID(string id){
+            return Ok(await _servicio.GetById(id));
+        }
     }
 }

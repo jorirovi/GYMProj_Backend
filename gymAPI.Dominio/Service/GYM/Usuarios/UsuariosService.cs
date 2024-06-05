@@ -93,11 +93,11 @@ namespace gymAPI.Dominio.Service.GYM.Usuarios
             }
         }
 
-        public async Task<UsuariosContract> UpdatePass(string email, string newPass)
+        public async Task<UsuariosContract> UpdatePass(LoginContract entity)
         {
-            UsuariosEntity usuario = await _uRepository.GetUsuarioByEmail(email);
+            UsuariosEntity usuario = await _uRepository.GetUsuarioByEmail(entity.email);
             if (usuario != null){
-                string pass = _cifrado.EncryptString(newPass);
+                string pass = _cifrado.EncryptString(entity.password);
                 UsuariosEntity pmUsuario = new UsuariosEntity(){
                     Id = usuario.Id,
                     nombre = usuario.nombre,
