@@ -1,3 +1,4 @@
+using gymAPI.Comunes.Classes.Constantes;
 using gymAPI.Comunes.Classes.Contracts;
 using gymAPI.Dominio.Service.GYM.General;
 using Microsoft.AspNetCore.Authorization;
@@ -21,6 +22,19 @@ namespace gymAPI.Controllers
         [HttpGet("{id}")]
         public async Task<IActionResult> ObtenerUsuariosByID(string id){
             return Ok(await _servicio.GetById(id));
+        }
+        [HttpPost]
+        public async Task<IActionResult> Crear_Usuario(UsuariosContract entity){
+            return Ok(await _servicio.Create(entity));
+        }
+        [HttpPut]
+        public async Task<IActionResult> Actualizar_Usuario(UsuariosContract entity){
+            return Ok(await _servicio.Update(entity));
+        }
+        [HttpDelete("{id}")]
+        public async Task<IActionResult> Eliminar_Usuario(string id){
+            await _servicio.Remove(id);
+            return Ok(GymConstantes.registroElimnado);
         }
     }
 }

@@ -17,6 +17,7 @@ namespace gymAPI.Controllers
             _servicio = servicio;
             _usuarioServicio = usuarioServicio;
         }
+        //este controladoe usuario es para que se pueda hacer registro de los mismos y cambio de password sin authorizacion
         [HttpPost]
         public async Task<IActionResult> CrearUSuario(UsuariosContract entity)
         {
