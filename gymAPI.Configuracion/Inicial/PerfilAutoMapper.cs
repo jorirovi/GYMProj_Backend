@@ -9,6 +9,9 @@ namespace gymAPI.Configuracion.Inicial
         public PerfilAutoMapper()
         {
             CreateMap<UsuariosEntity, UsuariosContract>().ReverseMap();
+            CreateMap<UsuariosEntity, UsuarioTDOContract>().ReverseMap();
+            CreateMap<PerfilUsuarioEntity, PerfilUsuarioContract>().ReverseMap();
+            CreateMap<PerfilUsuarioEntity, PerfilUTDOContract>().ReverseMap();
         }
     }
 }
