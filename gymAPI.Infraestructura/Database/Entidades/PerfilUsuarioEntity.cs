@@ -7,7 +7,6 @@ namespace gymAPI.Infraestructura.Database.Entidades
         [BsonId]
         [BsonRepresentation(MongoDB.Bson.BsonType.ObjectId)]
         public string? Id { get; set; }
-        [BsonId]
         public string? idUsuario { get; set;}
         public int edad { get; set; }
         public double peso { get; set; }
