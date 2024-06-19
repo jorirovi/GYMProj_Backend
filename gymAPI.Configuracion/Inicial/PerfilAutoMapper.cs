@@ -14,6 +14,9 @@ namespace gymAPI.Configuracion.Inicial
             CreateMap<PerfilUsuarioEntity, PerfilUTDOContract>().ReverseMap();
             CreateMap<UsuariosEntity, PerfilUTDOContract>().ReverseMap();
             CreateMap<RutinasEntity, RutinasContract>().ReverseMap();
+            CreateMap<DetalleRutinasEntity, DetalleRutinaContract>().ReverseMap();
+            CreateMap<DetalleRutinasEntity, DetalleRTDOContract>().ReverseMap();
+            CreateMap<UnidadPesoEntity, UnidadContract>().ReverseMap();
         }
     }
 }
