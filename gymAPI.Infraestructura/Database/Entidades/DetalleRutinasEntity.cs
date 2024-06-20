@@ -10,7 +10,8 @@ namespace gymAPI.Infraestructura.Database.Entidades
         [BsonRepresentation(MongoDB.Bson.BsonType.ObjectId)]
         public string? idRutina { get; set; }
         [BsonRepresentation(MongoDB.Bson.BsonType.ObjectId)]
-        public string? idUsuario { get; set; } 
+        public string? idUsuario { get; set; }
+        public int zonaCorporal { get; set; } = 0;
         public string? ejercicio { get; set; }
         public string? maquina { get; set; }
         public int peso { get; set; }

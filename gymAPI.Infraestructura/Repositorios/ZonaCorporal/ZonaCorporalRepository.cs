@@ -5,7 +5,7 @@ using MongoDB.Driver;
 
 namespace gymAPI.Infraestructura.Repositorios.ZonaCorporal
 {
-    public class ZonaCorporalRepository : ICrudRepository<ZonaCorporalEntity>
+    public class ZonaCorporalRepository : ICrudRepository<ZonaCorporalEntity>, IZonaCorporalRepository
     {
         private readonly IMongoCollection<ZonaCorporalEntity> _collection;
         public ZonaCorporalRepository(IConfiguration configuration)
@@ -16,29 +16,41 @@ namespace gymAPI.Infraestructura.Repositorios.ZonaCorporal
             _collection= database.GetCollection<ZonaCorporalEntity>("zonacorporal");
         }
 
-        public Task<ZonaCorporalEntity> CreateAsync(ZonaCorporalEntity entity)
+        public async Task<ZonaCorporalEntity> CreateAsync(ZonaCorporalEntity entity)
         {
-            throw new NotImplementedException();
+            await _collection.InsertOneAsync(entity);
+            return entity;
         }
 
-        public Task<List<ZonaCorporalEntity>> GetAllAsync()
+        public async Task<List<ZonaCorporalEntity>> GetAllAsync()
         {
-            throw new NotImplementedException();
+            return await _collection.Find(_ => true).ToListAsync();
         }
 
-        public Task<ZonaCorporalEntity> GetUserByID(string id)
+        public Task<ZonaCorporalEntity> GetByNZC(int numero)
         {
-            throw new NotImplementedException();
+            return _collection.Find(zC => zC.numeroZC == numero).FirstOrDefaultAsync();
         }
 
-        public Task RemoveAsync(ZonaCorporalEntity entity)
+        public Task<ZonaCorporalEntity> GetByZC(string zonaCorporal)
         {
-            throw new NotImplementedException();
+            return _collection.Find(zC => zC.zonaCorporal == zonaCorporal).FirstOrDefaultAsync();
         }
 
-        public Task<ZonaCorporalEntity> UpdateAsync(ZonaCorporalEntity entity)
+        public async Task<ZonaCorporalEntity> GetUserByID(string id)
         {
-            throw new NotImplementedException();
+            return await _collection.Find(zC => zC.Id == id).FirstOrDefaultAsync();
+        }
+
+        public async Task RemoveAsync(ZonaCorporalEntity entity)
+        {
+            await _collection.DeleteOneAsync(zC => zC.Id == entity.Id);
+        }
+
+        public async Task<ZonaCorporalEntity> UpdateAsync(ZonaCorporalEntity entity)
+        {
+            await _collection.ReplaceOneAsync(zC => zC.Id == entity.Id, entity);
+            return entity;
         }
     }
 }

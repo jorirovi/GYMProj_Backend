@@ -6,7 +6,9 @@ namespace gymAPI.Comunes.Classes.Contracts
         public string? idRutina { get; set; }
         public RutinasContract? rutina { get; set; }
         public string? idUsuario { get; set; } 
-        public UsuarioTDOContract? usuario { get; set; } 
+        public UsuarioTDOContract? usuario { get; set; }
+        public int zonaCorporal { get; set; }
+        public ZonaCorporalContract? dZonaCorporal { get; set; }
         public string? ejercicio { get; set; }
         public string? maquina { get; set; }
         public int peso { get; set; }
