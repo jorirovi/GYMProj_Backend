@@ -1,4 +1,6 @@
+using System.Net.Http.Headers;
 using AutoMapper;
+using gymAPI.Comunes.Classes.Constantes;
 using gymAPI.Comunes.Classes.Contracts;
 using gymAPI.Dominio.Service.GYM.General;
 using gymAPI.Infraestructura.Database.Entidades;
@@ -20,29 +22,63 @@ namespace gymAPI.Dominio.Service.GYM.ZonaCorporal
             _mapper = mapper;
         }
 
-        public Task<ZonaCorporalContract> Create(ZonaCorporalContract entity)
+        public async Task<ZonaCorporalContract> Create(ZonaCorporalContract entity)
         {
-            throw new NotImplementedException();
+            ZonaCorporalEntity zCorporal =  await _zCRepository.GetByNZC(entity.numeroZC);
+            if (zCorporal == null)
+            {
+                zCorporal = await _crudRepository.CreateAsync(_mapper.Map<ZonaCorporalEntity>(entity));
+                return _mapper.Map<ZonaCorporalContract>(zCorporal);
+            }
+            else
+            {
+                return _mapper.Map<ZonaCorporalContract>(zCorporal);
+            }
         }
 
-        public Task<List<ZonaCorporalContract>> GetAll()
+        public async Task<List<ZonaCorporalContract>> GetAll()
         {
-            throw new NotImplementedException();
+            List<ZonaCorporalContract> listaZC = _mapper.Map<List<ZonaCorporalContract>>(await _crudRepository.GetAllAsync());
+            return listaZC;
         }
 
-        public Task<ZonaCorporalContract> GetById(string id)
+        public async Task<ZonaCorporalContract> GetById(string id)
         {
-            throw new NotImplementedException();
+            ZonaCorporalContract zonaCorporal = _mapper.Map<ZonaCorporalContract>(await _crudRepository.GetUserByID(id));
+            return zonaCorporal;
         }
 
-        public Task Remove(string id)
+        public async Task Remove(string id)
         {
-            throw new NotImplementedException();
+            ZonaCorporalEntity zonaCorporal = await _crudRepository.GetUserByID(id);
+            if (zonaCorporal != null)
+            {
+                await _crudRepository.RemoveAsync(zonaCorporal);
+            }
+            else 
+            {
+                throw new Exception(GymConstantes.registroNoEncontrado);
+            }
         }
 
-        public Task<ZonaCorporalContract> Update(ZonaCorporalContract entity)
+        public async Task<ZonaCorporalContract> Update(ZonaCorporalContract entity)
         {
-            throw new NotImplementedException();
+            ZonaCorporalEntity zCorporalA = await _crudRepository.GetUserByID(entity.Id);
+            if (zCorporalA != null)
+            {
+                ZonaCorporalEntity zCorporalM = new ZonaCorporalEntity()
+                {
+                    Id = zCorporalA.Id,
+                    zonaCorporal = entity.zonaCorporal,
+                    numeroZC = entity.numeroZC
+                };
+                zCorporalM = await _crudRepository.UpdateAsync(zCorporalM);
+                return _mapper.Map<ZonaCorporalContract>(zCorporalM);
+            }
+            else
+            {
+                throw new Exception(GymConstantes.registroNoEncontrado);
+            }
         }
     }
 }

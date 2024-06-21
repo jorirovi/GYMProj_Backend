@@ -32,9 +32,14 @@ namespace gymAPI.Infraestructura.Repositorios.DetalleRutinas
             return await _collection.Find(dr => dr.idRutina == idRutina).ToListAsync();
         }
 
-        public async Task<DetalleRutinasEntity> GetDRByIdUsuario(string idUsuario)
+        public async Task<List<DetalleRutinasEntity>> GetDRByIdUsuario(string idUsuario)
         {
-            return await _collection.Find(dr => dr.idUsuario == idUsuario).FirstOrDefaultAsync();
+            return await _collection.Find(dr => dr.idUsuario == idUsuario).ToListAsync();
+        }
+
+        public Task<List<DetalleRutinasEntity>> GetDRbyZonaCorporal(int zCorporal)
+        {
+            return _collection.Find(dr => dr.zonaCorporal == zCorporal).ToListAsync();
         }
 
         public async Task<DetalleRutinasEntity> GetUserByID(string id)

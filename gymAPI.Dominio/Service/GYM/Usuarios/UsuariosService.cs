@@ -32,8 +32,8 @@ namespace gymAPI.Dominio.Service.GYM.Usuarios
             {
                 string pass = entity.password;
                 entity.password = _cifrado.EncryptString(pass);
-                await _repository.CreateAsync(_mapper.Map<UsuariosEntity>(entity));
-                return entity;
+                usuario = await _repository.CreateAsync(_mapper.Map<UsuariosEntity>(entity));
+                return _mapper.Map<UsuariosContract>(usuario);
             }
             else
             {

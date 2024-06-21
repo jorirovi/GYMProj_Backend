@@ -7,6 +7,7 @@ using gymAPI.Infraestructura.Database.Entidades;
 using gymAPI.Infraestructura.Repositorios.DetalleRutinas;
 using gymAPI.Infraestructura.Repositorios.General;
 using gymAPI.Infraestructura.Repositorios.UnidadRepository;
+using gymAPI.Infraestructura.Repositorios.ZonaCorporal;
 
 namespace gymAPI.Dominio.Service.GYM.DetalleRutinas
 {
@@ -17,18 +18,20 @@ namespace gymAPI.Dominio.Service.GYM.DetalleRutinas
         private readonly ICrudRepository<UsuariosEntity> _uRepository;
         private readonly ICrudRepository<RutinasEntity> _rRepository;
         private readonly IUnidadRepository _uPRepository;
+        private readonly IZonaCorporalRepository _zcRepository;
         private readonly IMapper _mapper;
         public DetalleRutinaService(ICrudRepository<DetalleRutinasEntity> crudRepository, IDetalleRRepository drReposiotry,
             ICrudRepository<UsuariosEntity> uReposiotry, ICrudRepository<RutinasEntity> rReposiotry,
-            IMapper mapper, IUnidadRepository uPRepository)
-            {
-                _crudRepository = crudRepository;
-                _drRepository = drReposiotry;
-                _uRepository = uReposiotry;
-                _rRepository = rReposiotry;
-                _mapper = mapper;
-                _uPRepository = uPRepository;               
-            }
+            IMapper mapper, IUnidadRepository uPRepository, IZonaCorporalRepository zcRepository)
+        {
+            _crudRepository = crudRepository;
+            _drRepository = drReposiotry;
+            _uRepository = uReposiotry;
+            _rRepository = rReposiotry;
+            _mapper = mapper;
+            _uPRepository = uPRepository;
+            _zcRepository = zcRepository;
+        }
 
         public async Task<DetalleRutinaContract> Create(DetalleRutinaContract entity)
         {
@@ -55,6 +58,7 @@ namespace gymAPI.Dominio.Service.GYM.DetalleRutinas
                 dr.rutina = _mapper.Map<RutinasContract>(_rRepository.GetUserByID(dr.idRutina).Result);
                 dr.usuario = _mapper.Map<UsuarioTDOContract>(_uRepository.GetUserByID(dr.idUsuario).Result);
                 dr.unidad = _mapper.Map<UnidadContract>(_uPRepository.GetUnidadByNumero(dr.unidadPeso).Result);
+                dr.dZonaCorporal = _mapper.Map<ZonaCorporalContract>(_zcRepository.GetByNZC(dr.zonaCorporal).Result);
             });
             return detalleRutina;
         }
@@ -66,8 +70,21 @@ namespace gymAPI.Dominio.Service.GYM.DetalleRutinas
                 drU.rutina = _mapper.Map<RutinasContract>(_rRepository.GetUserByID(drU.idRutina).Result);
                 drU.usuario = _mapper.Map<UsuarioTDOContract>(_uRepository.GetUserByID(drU.idUsuario).Result);
                 drU.unidad = _mapper.Map<UnidadContract>(_uPRepository.GetUnidadByNumero(drU.unidadPeso).Result);
+                drU.dZonaCorporal = _mapper.Map<ZonaCorporalContract>(_zcRepository.GetByNZC(drU.zonaCorporal).Result);
             });
             return detalleRutinaU;
+        }
+
+        public async Task<List<DetalleRTDOContract>> GetDRByZonaCorporal(int zCorporal)
+        {
+            List<DetalleRTDOContract> detalleRutinaZC = _mapper.Map<List<DetalleRTDOContract>>(await _drRepository.GetDRbyZonaCorporal(zCorporal));
+            detalleRutinaZC.ForEach(drZC => {
+                drZC.rutina = _mapper.Map<RutinasContract>(_rRepository.GetUserByID(drZC.idRutina).Result);
+                drZC.usuario = _mapper.Map<UsuarioTDOContract>(_uRepository.GetUserByID(drZC.idUsuario).Result);
+                drZC.unidad = _mapper.Map<UnidadContract>(_uPRepository.GetUnidadByNumero(drZC.unidadPeso).Result);
+                drZC.dZonaCorporal = _mapper.Map<ZonaCorporalContract>(_zcRepository.GetByNZC(drZC.zonaCorporal).Result);
+            });
+            return detalleRutinaZC;
         }
 
         public async Task Remove(string id)
@@ -97,7 +114,8 @@ namespace gymAPI.Dominio.Service.GYM.DetalleRutinas
                     peso = entity.peso,
                     unidadPeso = (int)UnidadEnum.Kg,
                     repeticiones = entity.repeticiones,
-                    ilustracion = entity.ilustracion
+                    ilustracion = entity.ilustracion,
+                    zonaCorporal = entity.zonaCorporal
                 };
                 await _crudRepository.UpdateAsync(detalleRutinaM);
                 return _mapper.Map<DetalleRutinaContract>(detalleRutinaM);

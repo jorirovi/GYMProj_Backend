@@ -45,5 +45,10 @@ namespace gymAPI.Controllers
         {
             return Ok(await _servicioDR.GetDRByUsuario(idUsuario));
         }
+        [HttpGet("zonacorporal/{nZC}")]
+        public async Task<IActionResult> Obtener_DRbyZonaCorporal(int nZC)
+        {
+            return Ok(await _servicioDR.GetDRByZonaCorporal(nZC));
+        }
     }
 }
