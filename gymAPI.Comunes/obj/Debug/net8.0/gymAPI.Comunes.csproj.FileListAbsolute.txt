@@ -10,3 +10,4 @@
 /Users/jorgeromero/Documents/Desarrollo/CSharp/GYMMDB/gymAPI.Comunes/obj/Debug/net8.0/gymAPI.Comunes.pdb
 /Users/jorgeromero/Documents/Desarrollo/CSharp/GYMMDB/gymAPI.Comunes/obj/Debug/net8.0/ref/gymAPI.Comunes.dll
 /Users/jorgeromero/Documents/Desarrollo/CSharp/GYMMDB/gymAPI.Comunes/obj/Debug/net8.0/gymAPI.Comunes.csproj.AssemblyReference.cache
+/Users/jorgeromero/Documents/Desarrollo/CSharp/GYMMDB/gymAPI.Comunes/obj/Debug/net8.0/gymAPI.Comunes.sourcelink.json

@@ -63,3 +63,4 @@
 /Users/jorgeromero/Documents/Desarrollo/CSharp/GYMMDB/gymAPI/bin/Debug/net8.0/Microsoft.IdentityModel.Protocols.OpenIdConnect.dll
 /Users/jorgeromero/Documents/Desarrollo/CSharp/GYMMDB/gymAPI/bin/Debug/net8.0/Microsoft.IdentityModel.Tokens.dll
 /Users/jorgeromero/Documents/Desarrollo/CSharp/GYMMDB/gymAPI/bin/Debug/net8.0/System.IdentityModel.Tokens.Jwt.dll
+/Users/jorgeromero/Documents/Desarrollo/CSharp/GYMMDB/gymAPI/obj/Debug/net8.0/gymAPI.sourcelink.json

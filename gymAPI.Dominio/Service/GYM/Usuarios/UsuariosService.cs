@@ -6,10 +6,11 @@ using gymAPI.Dominio.Service.GYM.General;
 using gymAPI.Infraestructura.Database.Entidades;
 using gymAPI.Infraestructura.Repositorios;
 using gymAPI.Infraestructura.Repositorios.General;
+using gymAPI.Infraestructura.Repositorios.Usuarios;
 
 namespace gymAPI.Dominio.Service.GYM.Usuarios
 {
-    public class UsuariosService : ICrudService<UsuariosContract>
+    public class UsuariosService : ICrudService<UsuariosContract>, IUsuariosService
     {
         private readonly ICrudRepository<UsuariosEntity> _repository;
         private readonly IUsuarioRepository _uRepository;
@@ -31,8 +32,8 @@ namespace gymAPI.Dominio.Service.GYM.Usuarios
             {
                 string pass = entity.password;
                 entity.password = _cifrado.EncryptString(pass);
-                await _repository.CreateAsync(_mapper.Map<UsuariosEntity>(entity));
-                return entity;
+                usuario = await _repository.CreateAsync(_mapper.Map<UsuariosEntity>(entity));
+                return _mapper.Map<UsuariosContract>(usuario);
             }
             else
             {
@@ -89,6 +90,27 @@ namespace gymAPI.Dominio.Service.GYM.Usuarios
             else
             {
                 throw new Exception(GymConstantes.registroNoEncontrado);
+            }
+        }
+
+        public async Task<UsuariosContract> UpdatePass(LoginContract entity)
+        {
+            UsuariosEntity usuario = await _uRepository.GetUsuarioByEmail(entity.email);
+            if (usuario != null){
+                string pass = _cifrado.EncryptString(entity.password);
+                UsuariosEntity pmUsuario = new UsuariosEntity(){
+                    Id = usuario.Id,
+                    nombre = usuario.nombre,
+                    apellidos = usuario.apellidos,
+                    email = usuario.email,
+                    password = pass
+                };
+                await _repository.UpdateAsync(pmUsuario);
+                return _mapper.Map<UsuariosContract>(pmUsuario);
+            }
+            else
+            {
+                throw new Exception(GymConstantes.EmailNoEncontrado);
             }
         }
     }

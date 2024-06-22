@@ -13,3 +13,4 @@
 /Users/jorgeromero/Documents/Desarrollo/CSharp/GYMMDB/gymAPI.Infraestructura/obj/Debug/net8.0/refint/gymAPI.Infraestructura.dll
 /Users/jorgeromero/Documents/Desarrollo/CSharp/GYMMDB/gymAPI.Infraestructura/obj/Debug/net8.0/gymAPI.Infraestructura.pdb
 /Users/jorgeromero/Documents/Desarrollo/CSharp/GYMMDB/gymAPI.Infraestructura/obj/Debug/net8.0/ref/gymAPI.Infraestructura.dll
+/Users/jorgeromero/Documents/Desarrollo/CSharp/GYMMDB/gymAPI.Infraestructura/obj/Debug/net8.0/gymAPI.Infraestructura.sourcelink.json

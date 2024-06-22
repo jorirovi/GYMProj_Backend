@@ -25,7 +25,7 @@ namespace gymAPI.Dominio.Service.GYM.Login
             UsuariosEntity usuario = await _uRepository.GetUserByEmailPass(entity.email, pass);
             if (usuario != null)
             {
-                TokenContract TokenAuth = new TokenContract(){
+                TokenContract TokenAuth = new TokenContract{
                     IdU = usuario.Id,
                     email = usuario.email,
                     token = JWTHelper.GenerarToken(usuario.nombre, _config)
