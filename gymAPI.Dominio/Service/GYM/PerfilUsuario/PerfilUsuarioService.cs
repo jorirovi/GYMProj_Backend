@@ -62,7 +62,7 @@ namespace gymAPI.Dominio.Service.GYM.PerfilUsuario
 
         public async Task<PerfilUsuarioContract> GetById(string id)
         {
-            PerfilUsuarioContract perfilUsuario = _mapper.Map<PerfilUsuarioContract>(await _puRepository.GetPerfilByIDU(id));
+            PerfilUsuarioContract perfilUsuario = _mapper.Map<PerfilUsuarioContract>(await _crudRepository.GetUserByID(id));
             if (perfilUsuario != null)
             {
                 return perfilUsuario;
