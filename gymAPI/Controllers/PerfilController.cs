@@ -50,5 +50,11 @@ namespace gymAPI.Controllers
         public async Task<IActionResult> Obtener_Perfil(string id){
             return Ok(await _puService.GetProfileByID(id));
         }
+
+        [HttpGet("perfil/{id}")]
+        public async Task<IActionResult> Obtener_PerfilSolo(string id)
+        {
+            return Ok(await _servicio.GetById(id));
+        }
     }
 }
