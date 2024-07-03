@@ -32,7 +32,7 @@ namespace gymAPI.Dominio.Service.GYM.ZonaCorporal
             }
             else
             {
-                return _mapper.Map<ZonaCorporalContract>(zCorporal);
+                throw new Exception("El registro ya existe" + zCorporal.zonaCorporal);
             }
         }
 
