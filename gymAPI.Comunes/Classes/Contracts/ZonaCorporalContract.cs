@@ -4,6 +4,6 @@ namespace gymAPI.Comunes.Classes.Contracts
     {
         public string Id { get; set; } = string.Empty;
         public string zonaCorporal { get; set; } = string.Empty;
-        public int numeroZC { get; set; } = 0;
+        public int numeroZC { get; set; }
     }
 }

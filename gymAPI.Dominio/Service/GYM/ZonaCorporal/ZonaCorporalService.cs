@@ -24,9 +24,11 @@ namespace gymAPI.Dominio.Service.GYM.ZonaCorporal
 
         public async Task<ZonaCorporalContract> Create(ZonaCorporalContract entity)
         {
-            ZonaCorporalEntity zCorporal =  await _zCRepository.GetByNZC(entity.numeroZC);
+            ZonaCorporalEntity zCorporal =  await _zCRepository.GetByZC(entity.zonaCorporal);
             if (zCorporal == null)
             {
+                string nombreZC = entity.zonaCorporal.ToLower();
+                entity.zonaCorporal = nombreZC;
                 zCorporal = await _crudRepository.CreateAsync(_mapper.Map<ZonaCorporalEntity>(entity));
                 return _mapper.Map<ZonaCorporalContract>(zCorporal);
             }
