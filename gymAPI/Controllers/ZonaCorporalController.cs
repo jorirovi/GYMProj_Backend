@@ -30,7 +30,8 @@ namespace gymAPI.Controllers
         public async Task<IActionResult> Eliminar_ZC(string id)
         {
             await _servicio.Remove(id);
-            return Ok(GymConstantes.registroElimnado);
+            var response = new { message = GymConstantes.registroElimnado };
+            return Ok(response);
         }
         [HttpGet]
         public async Task<IActionResult> Obtener_ZCs()
