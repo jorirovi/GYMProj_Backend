@@ -5,7 +5,7 @@ using MongoDB.Driver;
 
 namespace gymAPI.Infraestructura.Repositorios.Rutinas
 {
-    public class RutinasRepository : ICrudRepository<RutinasEntity>
+    public class RutinasRepository : ICrudRepository<RutinasEntity>, IRutinaRepository
     {
         private readonly IMongoCollection<RutinasEntity> _collection;
         public RutinasRepository(IConfiguration configuration)
@@ -25,6 +25,11 @@ namespace gymAPI.Infraestructura.Repositorios.Rutinas
         public async Task<List<RutinasEntity>> GetAllAsync()
         {
             return await _collection.Find(_ => true).ToListAsync(); 
+        }
+
+        public Task<RutinasEntity> GetByRutina(string rutina)
+        {
+            return _collection.Find(r => r.rutina == rutina).FirstOrDefaultAsync();
         }
 
         public async Task<RutinasEntity> GetUserByID(string id)

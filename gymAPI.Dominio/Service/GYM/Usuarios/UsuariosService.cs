@@ -37,7 +37,7 @@ namespace gymAPI.Dominio.Service.GYM.Usuarios
             }
             else
             {
-                return _mapper.Map<UsuariosContract>(usuario);
+                throw new Exception("El Email: " + usuario.email + " ya esta registrado");
             }
         }
 

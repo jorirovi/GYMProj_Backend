@@ -34,7 +34,7 @@ namespace gymAPI.Dominio.Service.GYM.ZonaCorporal
             }
             else
             {
-                throw new Exception("El registro ya existe" + zCorporal.zonaCorporal);
+                throw new Exception("El registro " + zCorporal.zonaCorporal + " ya existe");
             }
         }
 
