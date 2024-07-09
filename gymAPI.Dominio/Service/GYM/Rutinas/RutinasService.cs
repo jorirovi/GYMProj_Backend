@@ -8,7 +8,7 @@ using gymAPI.Infraestructura.Repositorios.Rutinas;
 
 namespace gymAPI.Dominio.Service.GYM.Rutinas
 {
-    public class RutinasService : ICrudService<RutinasContract>
+    public class RutinasService : ICrudService<RutinasContract>, IRutinaService
     {
         private readonly ICrudRepository<RutinasEntity> _crudRepository;
         private readonly IRutinaRepository _rutinaRepository;
@@ -62,6 +62,24 @@ namespace gymAPI.Dominio.Service.GYM.Rutinas
             if(rutina != null)
             {
                 await _crudRepository.RemoveAsync(rutina);
+            }
+            else 
+            {
+                throw new Exception(GymConstantes.registroNoEncontrado);
+            }
+        }
+
+        public async Task<EliminarContract> RemoveWAnswer(string id)
+        {
+            RutinasEntity rutinaEliminar = await _crudRepository.GetUserByID(id);
+            if (rutinaEliminar != null)
+            {
+                EliminarContract objEliminar = new EliminarContract(){
+                    registro = rutinaEliminar.rutina,
+                    mensaje = GymConstantes.registroElimnado
+                };
+                await _crudRepository.RemoveAsync(rutinaEliminar);
+                return objEliminar;
             }
             else 
             {

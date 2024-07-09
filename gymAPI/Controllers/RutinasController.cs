@@ -1,6 +1,7 @@
 using gymAPI.Comunes.Classes.Constantes;
 using gymAPI.Comunes.Classes.Contracts;
 using gymAPI.Dominio.Service.GYM.General;
+using gymAPI.Dominio.Service.GYM.Rutinas;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
@@ -12,9 +13,11 @@ namespace gymAPI.Controllers
     public class RutinasController : ControllerBase
     {
         private readonly ICrudService<RutinasContract> _servicio;
-        public RutinasController(ICrudService<RutinasContract> servicio)
+        private readonly IRutinaService _rutinaService;
+        public RutinasController(ICrudService<RutinasContract> servicio, IRutinaService rutinaService)
         {
             _servicio = servicio;
+            _rutinaService = rutinaService;
         }
         [HttpPost]
         public async Task<IActionResult> Crear_Rutina(RutinasContract entity)
@@ -32,6 +35,11 @@ namespace gymAPI.Controllers
             await _servicio.Remove(id);
             var response = new {message = GymConstantes.registroElimnado};
             return Ok(response);
+        }
+        [HttpDelete("Mensaje/{id}")]
+        public async Task<IActionResult> Eliminar_Con_Mensaje(string id)
+        {
+            return Ok(await _rutinaService.RemoveWAnswer(id));
         }
         [HttpGet]
         public async Task<IActionResult> Obtener_Rutinas()

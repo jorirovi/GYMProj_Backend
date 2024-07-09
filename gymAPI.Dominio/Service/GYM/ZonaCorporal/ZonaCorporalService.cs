@@ -9,7 +9,7 @@ using gymAPI.Infraestructura.Repositorios.ZonaCorporal;
 
 namespace gymAPI.Dominio.Service.GYM.ZonaCorporal
 {
-    public class ZonaCorporalService : ICrudService<ZonaCorporalContract>
+    public class ZonaCorporalService : ICrudService<ZonaCorporalContract>, IZonaCorporalService
     {
         private readonly ICrudRepository<ZonaCorporalEntity> _crudRepository;
         private readonly IZonaCorporalRepository _zCRepository;
@@ -58,6 +58,24 @@ namespace gymAPI.Dominio.Service.GYM.ZonaCorporal
                 await _crudRepository.RemoveAsync(zonaCorporal);
             }
             else 
+            {
+                throw new Exception(GymConstantes.registroNoEncontrado);
+            }
+        }
+
+        public async Task<EliminarContract> RemoveWMensaje(string id)
+        {
+            ZonaCorporalEntity zcEliminar = await _crudRepository.GetUserByID(id);
+            if(zcEliminar != null)
+            {
+                EliminarContract mensajeZCE = new EliminarContract(){
+                    registro = zcEliminar.zonaCorporal,
+                    mensaje = GymConstantes.registroElimnado
+                };
+                await _crudRepository.RemoveAsync(zcEliminar);
+                return mensajeZCE;
+            }
+            else
             {
                 throw new Exception(GymConstantes.registroNoEncontrado);
             }
