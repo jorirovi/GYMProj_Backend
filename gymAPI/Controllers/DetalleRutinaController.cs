@@ -50,5 +50,20 @@ namespace gymAPI.Controllers
         {
             return Ok(await _servicioDR.GetDRByZonaCorporal(nZC));
         }
+        [HttpGet]
+        public async Task<IActionResult> ObtenerDetallesRutinas()
+        {
+            return Ok(await _servicio.GetAll());
+        }
+        [HttpGet("{id}")]
+        public async Task<IActionResult> obtenerDetalleR(string id)
+        {
+            return Ok(await _servicio.GetById(id));
+        }
+        [HttpDelete("mensaje/{id}")]
+        public async Task<IActionResult> ElminarRConMensaje(string id)
+        {
+            return Ok(await _servicioDR.RemoveWMensaje(id));
+        }
     }
 }

@@ -27,6 +27,11 @@ namespace gymAPI.Infraestructura.Repositorios.DetalleRutinas
             return await _collection.Find(_ => true).ToListAsync();
         }
 
+        public async Task<DetalleRutinasEntity> getByEjercicio(string ejercicio)
+        {
+            return await _collection.Find(dr => dr.ejercicio == ejercicio).FirstOrDefaultAsync();
+        }
+
         public async Task<List<DetalleRutinasEntity>> GetDRbyIdRutina(string idRutina)
         {
             return await _collection.Find(dr => dr.idRutina == idRutina).ToListAsync();

@@ -1,3 +1,4 @@
+using System.Linq.Expressions;
 using AutoMapper;
 using gymAPI.Comunes.Classes.Constantes;
 using gymAPI.Comunes.Classes.Contracts;
@@ -35,20 +36,32 @@ namespace gymAPI.Dominio.Service.GYM.DetalleRutinas
 
         public async Task<DetalleRutinaContract> Create(DetalleRutinaContract entity)
         {
-            DetalleRutinasEntity dRutina = new DetalleRutinasEntity();
-            entity.unidadPeso = (int)UnidadEnum.Kg;
-            dRutina = await _crudRepository.CreateAsync(_mapper.Map<DetalleRutinasEntity>(entity));
-            return _mapper.Map<DetalleRutinaContract>(dRutina);
+            string actividad = entity.ejercicio.ToLower();
+            DetalleRutinasEntity dRutina = await _drRepository.getByEjercicio(actividad);
+            if(dRutina == null)
+            {
+                entity.ejercicio = actividad;
+                entity.unidadPeso = (int)UnidadEnum.Kg;
+                dRutina = await _crudRepository.CreateAsync(_mapper.Map<DetalleRutinasEntity>(entity));
+                return _mapper.Map<DetalleRutinaContract>(dRutina);
+            }
+            else 
+            {
+                throw new Exception("El Ejercicio ya existe");
+            }
+            
         }
 
-        public Task<List<DetalleRutinaContract>> GetAll()
+        public async Task<List<DetalleRutinaContract>> GetAll()
         {
-            throw new NotImplementedException();
+            List<DetalleRutinaContract> rutinas = _mapper.Map<List<DetalleRutinaContract>>(await _crudRepository.GetAllAsync());
+            return rutinas;
         }
 
-        public Task<DetalleRutinaContract> GetById(string id)
+        public async Task<DetalleRutinaContract> GetById(string id)
         {
-            throw new NotImplementedException();
+            DetalleRutinaContract rutiana = _mapper.Map<DetalleRutinaContract>(await _crudRepository.GetUserByID(id));
+            return rutiana;
         }
 
         public async Task<List<DetalleRTDOContract>> GetDRByRutina(string idRutina)
@@ -115,7 +128,8 @@ namespace gymAPI.Dominio.Service.GYM.DetalleRutinas
                     unidadPeso = (int)UnidadEnum.Kg,
                     repeticiones = entity.repeticiones,
                     ilustracion = entity.ilustracion,
-                    zonaCorporal = entity.zonaCorporal
+                    zonaCorporal = entity.zonaCorporal,
+                    guia = entity.guia
                 };
                 await _crudRepository.UpdateAsync(detalleRutinaM);
                 return _mapper.Map<DetalleRutinaContract>(detalleRutinaM);

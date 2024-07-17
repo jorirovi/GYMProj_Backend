@@ -18,5 +18,6 @@ namespace gymAPI.Infraestructura.Database.Entidades
         public int unidadPeso { get; set; }
         public int repeticiones { get; set; }
         public string? ilustracion { get; set; }
+        public string? guia { get; set; }
     }
 }

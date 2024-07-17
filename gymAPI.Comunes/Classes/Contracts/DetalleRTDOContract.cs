@@ -16,5 +16,6 @@ namespace gymAPI.Comunes.Classes.Contracts
         public UnidadContract? unidad { get; set; }
         public int repeticiones { get; set; }
         public string? ilustracion { get; set; }
+        public string? guia { get; set; }
     }
 }

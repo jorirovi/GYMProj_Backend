@@ -7,5 +7,6 @@ namespace gymAPI.Infraestructura.Repositorios.DetalleRutinas
         Task<List<DetalleRutinasEntity>> GetDRbyIdRutina (string idRutina);
         Task<List<DetalleRutinasEntity>> GetDRByIdUsuario (string idUsuario);
         Task<List<DetalleRutinasEntity>> GetDRbyZonaCorporal (int zCorporal);
+        Task<DetalleRutinasEntity> getByEjercicio (string ejercicio);
     }
 }
