@@ -113,6 +113,24 @@ namespace gymAPI.Dominio.Service.GYM.DetalleRutinas
             }
         }
 
+        public async Task<EliminarContract> RemoveWMensaje(string id)
+        {
+            DetalleRutinasEntity detalleRutinaE = await _crudRepository.GetUserByID(id);
+            if (detalleRutinaE != null)
+            {
+                EliminarContract drElminadoMensaje = new EliminarContract(){
+                    registro = detalleRutinaE.ejercicio,
+                    mensaje = GymConstantes.registroElimnado
+                };
+                await _crudRepository.RemoveAsync(detalleRutinaE);
+                return drElminadoMensaje;
+            }
+            else
+            {
+                throw new Exception(GymConstantes.registroNoEncontrado);
+            }
+        }
+
         public async Task<DetalleRutinaContract> Update(DetalleRutinaContract entity)
         {
             DetalleRutinasEntity detalleRutinaA = await _crudRepository.GetUserByID(entity.Id);
